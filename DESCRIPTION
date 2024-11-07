@@ -13,7 +13,16 @@ Description: Calculate monthly costs and time required to pay off a mortgage in
     advantages and disadvantages of making the minimum required payments towards
     the principal while investing the money in an index fund instead to later
     pay off the principal as a lump sum.
+Imports:
+    dplyr,
+    readr,
+    rvest
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
