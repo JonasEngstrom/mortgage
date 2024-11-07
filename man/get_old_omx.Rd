@@ -22,7 +22,7 @@ Download historical data on the OMXS30 index form the Nasdaq OMX Nordic site
 that closes on November 14th 2024. This data stretches back to 1986, whereas
 the data on the new site only goes back ten years. Data downloaded using this
 function can be merged with data from the new site. A separate function
-handles data import from the new site. The current function will not be
-exported with the package, but merely used as an internal support function to
-download package data.
+handles data import from the new site. The current function will not work
+after November 14th 2024, but is used as an internal support function to
+download data included in the package. It might be removed in the future.
 }
