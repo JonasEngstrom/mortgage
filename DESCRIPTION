@@ -15,6 +15,7 @@ Description: Calculate monthly costs and time required to pay off a mortgage in
     pay off the principal as a lump sum.
 Imports:
     dplyr,
+    httr2,
     jsonlite,
     lubridate,
     readr,
