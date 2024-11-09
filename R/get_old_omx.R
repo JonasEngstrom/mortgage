@@ -9,10 +9,16 @@
 #' download data included in the package. It might be removed in the future.
 #'
 #' @param instrument Instrument ID. Defaults to the OMXS30 index.
-#' @param start_date Start date. Defaults to 1986-09-30
+#' @param start_date Start date. Defaults to 1986-09-30.
 #' @param sleep_time Seconds to wait between scraping commands.
 #'
-#' @return
+#' @return A tibble of historical OMXS30 data.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' old_omx_data <- get_old_
+#' }
 get_old_omx <- function(
     instrument = 'SE0000337842',
     start_date = '1986-09-30',
