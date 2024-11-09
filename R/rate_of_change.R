@@ -15,5 +15,10 @@
 #' @examples
 #' rate_of_change(100, 200, 31)
 rate_of_change <- function(start_value, end_value, time_delta) {
+  stopifnot(
+    'Start value cannot be zero.' = start_value != 0,
+    'Time delta cannot be zero.' = time_delta != 0
+  )
+
   return((end_value / start_value) ^ (1 / time_delta) - 1)
 }
