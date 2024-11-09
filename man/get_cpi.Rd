@@ -7,7 +7,10 @@
 get_cpi()
 }
 \value{
-A tibble of historical consumer price indes values.
+A tibble of historical consumer price index values. Note that the
+dates in the return tibble are set to the first day of their respective
+months, due to limitations in how dates are stored. The values apply to the
+entire months in question.
 }
 \description{
 Downloads consumer price index from \href{https://www.statistikdatabasen.scb.se}{the Statistics Sweden API}.

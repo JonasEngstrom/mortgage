@@ -1,8 +1,12 @@
 #' Get Consumer Price Index from Statistics Sweden
 #'
-#' Downloads consumer price index from [the Statistics Sweden API](https://www.statistikdatabasen.scb.se).
+#' Downloads consumer price index from [the Statistics Sweden
+#' API](https://www.statistikdatabasen.scb.se).
 #'
-#' @return A tibble of historical consumer price indes values.
+#' @return A tibble of historical consumer price index values. Note that the
+#'   dates in the return tibble are set to the first day of their respective
+#'   months, due to limitations in how dates are stored. The values apply to the
+#'   entire months in question.
 #' @export
 #'
 #' @md
