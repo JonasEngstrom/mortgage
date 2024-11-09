@@ -13,9 +13,12 @@ get_old_omx(
 \arguments{
 \item{instrument}{Instrument ID. Defaults to the OMXS30 index.}
 
-\item{start_date}{Start date. Defaults to 1986-09-30}
+\item{start_date}{Start date. Defaults to 1986-09-30.}
 
 \item{sleep_time}{Seconds to wait between scraping commands.}
+}
+\value{
+A tibble of historical OMXS30 data.
 }
 \description{
 Download historical data on the OMXS30 index form the Nasdaq OMX Nordic site
@@ -25,4 +28,9 @@ function can be merged with data from the new site. A separate function
 handles data import from the new site. The current function will not work
 after November 14th 2024, but is used as an internal support function to
 download data included in the package. It might be removed in the future.
+}
+\examples{
+\dontrun{
+old_omx_data <- get_old_
+}
 }

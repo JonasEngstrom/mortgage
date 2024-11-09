@@ -23,3 +23,26 @@
 #' @source
 #' <https://www.nasdaqomxnordic.com/index/historiska_kurser?Instrument=SE0000337842>
 "old_omxs30"
+
+#' OMXS30 Index Data Since 1986-09-30 and 2024-11-08
+#'
+#' [OMX Stockholm 30
+#' Index](https://www.nasdaq.com/european-market-activity/indexes/omxs30?id=SE0000337842)
+#' prices between 1986-09-30 and 2024-11-08.
+#'
+#' @format ## `long_omxs30` A data frame with 9,562 rows and 7 columns:
+#' \describe{
+#'   \item{date}{Date of observation.}
+#'   \item{high_price}{High price.}
+#'   \item{low_price}{Low price.}
+#'   \item{closing_price}{Closing price.}
+#'   \item{average_price}{Average price.}
+#'   \item{total_volume}{Total volume.}
+#'   \item{turnover}{Turnover.}
+#' }
+#'
+#' @md
+#' @source
+#' <https://www.nasdaqomxnordic.com/index/historiska_kurser?Instrument=SE0000337842>
+#' <https://www.nasdaq.com/european-market-activity/indexes/omxs30?id=SE0000337842>
+"long_omxs30"
