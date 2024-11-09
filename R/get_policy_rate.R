@@ -21,6 +21,8 @@ get_policy_rate <- function(
     start_date = '1994-06-01',
     end_date = Sys.time() |> strftime('%Y-%m-%d')
   ) {
+  NULL -> value
+
   'https://api.riksbank.se/' |>
     httr2::request() |>
     httr2::req_url_path(
@@ -34,5 +36,6 @@ get_policy_rate <- function(
     jsonlite::fromJSON() |>
     tibble::tibble() |>
     dplyr::mutate(date = as.Date(date)) |>
+    dplyr::rename(policy_rate = value) |>
     (\(x) return(x))()
 }

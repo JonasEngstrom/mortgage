@@ -18,9 +18,12 @@ Imports:
     httr2,
     jsonlite,
     lubridate,
+    purrr,
     readr,
     rvest,
-    tibble
+    stringr,
+    tibble,
+    tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
