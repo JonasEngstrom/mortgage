@@ -7,7 +7,7 @@
 get_policy_rate(
   series_id = "SECBREPOEFF",
   start_date = "1994-06-01",
-  end_date = Sys.time() \%>\% strftime("\%Y-\%m-\%d")
+  end_date = strftime(Sys.time(), "\%Y-\%m-\%d")
 )
 }
 \arguments{
@@ -18,7 +18,14 @@ policy rate, i.e. SECBREPOEFF.}
 
 \item{end_date}{End date. Defaults to today.}
 }
+\value{
+A tibble of historical policy rates.
+}
 \description{
-Downloads the Swedish policy rate using [the Swedish Central Banks’s
-API](https://developer.api.riksbank.se).
+Downloads the Swedish policy rate using \href{https://developer.api.riksbank.se}{the Swedish Central Banks’s API}.
+}
+\examples{
+\dontrun{
+policy_rates <- get_policy_rate()
+}
 }

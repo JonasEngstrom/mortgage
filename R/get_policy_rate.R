@@ -8,16 +8,20 @@
 #' @param start_date Start date. Defaults to 1994-06-01.
 #' @param end_date End date. Defaults to today.
 #'
-#' @return
+#' @return A tibble of historical policy rates.
 #' @export
 #'
+#' @md
 #' @examples
+#' \dontrun{
+#' policy_rates <- get_policy_rate()
+#' }
 get_policy_rate <- function(
     series_id = 'SECBREPOEFF',
     start_date = '1994-06-01',
-    end_date = Sys.time() %>% strftime('%Y-%m-%d')
+    end_date = Sys.time() |> strftime('%Y-%m-%d')
   ) {
-  'https://api.riksbank.se/' %>%
+  'https://api.riksbank.se/' |>
     httr2::request() |>
     httr2::req_url_path(
       'swea/v1/Observations',
