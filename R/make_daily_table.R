@@ -23,21 +23,22 @@ make_daily_table <- function() {
     trades ->
     closing_price ->
     date ->
-    long_omxs30 ->
     lead_date ->
     lead_closing_price ->
     lead_cpi ->
     daily_omxs30_change ->
     daily_policy_change ->
     daily_policy_rate ->
-    daily_cpi_change
+    daily_cpi_change ->
+    year ->
+    standard_rate
 
   amended_long_omxs30 <-
     get_omx() |>
     dplyr::select(-bid, -ask, -open, -trades) |>
-    dplyr::filter(!(date %in% (long_omxs30 |> dplyr::pull(date)))) |>
+    dplyr::filter(!(date %in% (mortgage::long_omxs30 |> dplyr::pull(date)))) |>
     dplyr::mutate(date = as.Date(date)) |>
-    dplyr::bind_rows(long_omxs30) |>
+    dplyr::bind_rows(mortgage::long_omxs30) |>
     dplyr::mutate(closing_price = dplyr::na_if(closing_price, 0))
 
   amended_long_omxs30 <-
@@ -99,7 +100,11 @@ make_daily_table <- function() {
       interest = daily_policy_rate,
       omxs30 = daily_omxs30_change,
       cpi = daily_cpi_change
-    )
+    ) |>
+    dplyr::mutate(year = lubridate::year(date)) |>
+    dplyr::left_join(calculate_standard_rate() |> dplyr::mutate(year = lubridate::year(date)) |> dplyr::select(-date), by = dplyr::join_by(year)) |>
+    dplyr::select(-year) |>
+    tidyr::fill(standard_rate, .direction = 'down')
 
   return(aggregate_table)
 }
