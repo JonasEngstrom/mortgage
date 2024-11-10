@@ -13,6 +13,9 @@ minimum_monthly_payment(initial_principal, loan_to_value_ratio, debt_ratio)
 
 \item{debt_ratio}{Ratio of debt to household gross income.}
 }
+\value{
+A numeric.
+}
 \description{
 Calculate the minimum required payment towards the principal of a housing
 loan, \href{https://www.fi.se/contentassets/690c9d8430bd4961b6073dedf4f9105f/fs1616-k2024.pdf}{as described by Finansinspektionen}.

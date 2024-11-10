@@ -8,7 +8,7 @@
 #' @param loan_to_value_ratio Ratio of asset value to remaining principal.
 #' @param debt_ratio Ratio of debt to household gross income.
 #'
-#' @return
+#' @return A numeric.
 #' @export
 #'
 #' @seealso [lvr()]
