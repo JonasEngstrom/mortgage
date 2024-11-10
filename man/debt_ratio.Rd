@@ -15,7 +15,8 @@ debt_ratio(remaining_principal, household_gross_income)
 A quotient.
 }
 \description{
-Calculate debt ratio as defined by \href{https://www.fi.se/contentassets/690c9d8430bd4961b6073dedf4f9105f/fs1616-k2024.pdf}{Finansinspektionen}.
+Calculate debt ratio as defined by
+\href{https://www.fi.se/contentassets/690c9d8430bd4961b6073dedf4f9105f/fs1616-k2024.pdf}{Finansinspektionen}.
 }
 \examples{
 debt_ratio(400, 100)
