@@ -4,7 +4,7 @@
 \alias{calculate_standard_rate}
 \title{Calculate the Standard Rate of Capital Income}
 \usage{
-calculate_standard_rate(government_borrowing_rate_table = gbr_table)
+calculate_standard_rate(government_borrowing_rate_table = mortgage::gbr_table)
 }
 \arguments{
 \item{government_borrowing_rate_table}{A table of the government borrowing
@@ -14,7 +14,7 @@ rate, from the function \code{get_governemnt_borroing_rate()}.}
 A tibble.
 }
 \description{
-Calculate the standard rate of capital income, using \href{https://www.avanza.se/lar-dig-mer/avanza-akademin/skatt-deklaration/hur-beskattas-en-kapitalforsakring.html}{the method descirbed by Avanza}.
+Calculate the standard rate of capital income, using \href{https://www.avanza.se/lar-dig-mer/avanza-akademin/skatt-deklaration/hur-beskattas-en-kapitalforsakring.html}{the method described by Avanza}.
 }
 \examples{
 \dontrun{
