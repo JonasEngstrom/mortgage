@@ -71,3 +71,37 @@
 #' <https://www.nasdaq.com/european-market-activity/indexes/omxs30?id=SE0000337842>
 #' <https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-konsumtion/konsumentprisindex/konsumentprisindex-kpi/>
 "daily_table"
+
+#' A Table of the Swedish Consumer Price Index Between 1980-01-01 and 2024-09-01
+#'
+#' A table of [the Swedish consumer price
+#' index](https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-konsumtion/konsumentprisindex/konsumentprisindex-kpi/).
+#'
+#' @format ## `cpi_table` A data frame with 537 rows and 2 columns:
+#' \describe{
+#'   \item{date}{Date of observation.}
+#'   \item{cpi}{Consumer price index.}
+#' }
+#'
+#' @md
+#' @source
+#' <https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-konsumtion/konsumentprisindex/konsumentprisindex-kpi/>
+"cpi_table"
+
+#' A Table of the Swedish Government Borrowing Rate Between 1986-12-05 and
+#' 2024-11-08
+#'
+#' A table of [the Swedish government borrowing
+#' rate](https://www.riksgalden.se/sv/var-verksamhet/statslanerantan/).
+#'
+#' @format ## `gbr_table` A data frame with 1,980 rows and 3 columns:
+#' \describe{
+#'   \item{date}{Date of observation.}
+#'   \item{gbr}{Government borrowing rate.}
+#'   \item{yearly_mean}{Yearly mean up to the the current observation}
+#' }
+#'
+#' @md
+#' @source
+#' <https://www.riksgalden.se/globalassets/dokument_sve/statslaneranta/slr-historisk-statslaneranta-csv.csv>
+"gbr_table"
