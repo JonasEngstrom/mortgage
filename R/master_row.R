@@ -7,12 +7,15 @@ master_row <- function(
     household_gross_income,
     pay_off_time,
     fraction_invested,
+    fund_fee,
     day_number,
     date,
     remaining_principal,
     cumulative_interest,
     index_fund_value,
-    cumulative_capital_tax
+    cumulative_capital_tax,
+    housing_association_fee,
+    cumulative_principal_payments
   ) {
   tibble::tibble(
     day_number,
@@ -20,7 +23,8 @@ master_row <- function(
     remaining_principal,
     interest_rate = daily_table |> filter(row_number() == day_number + historical_offset) |> pull(interest) + interest_markup,
     index_development = daily_table |> filter(row_number() == day_number + historical_offset) |> pull(omxs30),
-    standard_rate = daily_table |> filter(row_number() == day_number + historical_offset) |> pull(standard_rate)
+    standard_rate = daily_table |> filter(row_number() == day_number + historical_offset) |> pull(standard_rate),
+    inflation = daily_table |> filter(row_number() == day_number + historical_offset) |> pull(cpi)
   ) |>
     mutate(
       accrued_interest = remaining_principal * interest_rate,
@@ -36,7 +40,12 @@ master_row <- function(
       age = floor(interval(birth_day, Sys.Date()) / years(1)),
       insurance_fee = insurance_cost(age, index_fund_value),
       accrued_captial_tax = standard_sum(date, standard_rate, fund_payment),
-      current_year_cumulative_capital_tax = if_else(yday(date) == 1, 0, cumulative_capital_tax)
+      current_year_cumulative_capital_tax = if_else(yday(date) == 1, 0, cumulative_capital_tax),
+      fund_fee = fund_fee,
+      housing_association_fee = housing_association_fee,
+      cumulative_principal_payments = cumulative_principal_payments,
+      difference_cumulative_principal_payments_and_index_fund_vaule = index_fund_value - cumulative_principal_payments,
+      total_monthly_cost = loan_payment + fund_payment + housing_association_fee
     ) |>
     (\(x) return(x))()
 }
