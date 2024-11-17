@@ -25,7 +25,7 @@ get_current_list_rates <- function() {
     cxn$html_elements('#aktuella-listrantor---annonserade-rantor > div > div.position-relative > div > div > div.__panel') |>
     rvest::html_table() |>
     purrr::pluck(1) |>
-    dplyr::rename_with(~ str_remove_all(., '[\u00E5\u00F6 ]')) |>
+    dplyr::rename_with(~ stringr::str_remove_all(., '[\u00E5\u00F6 ]')) |>
     dplyr::mutate(interest = stringr::str_replace(`3mn`, '^(\\d*),(\\d{2})(.*)', '\\1.\\2') |> as.numeric()) |>
     dplyr::mutate(date = cxn$html_elements('#aktuella-listrantor---annonserade-rantor > div > div.mt-0.mb-3') |> rvest::html_text() |> stringr::str_extract('\\d{4}-\\d{2}-\\d{2}') |> as.Date()) |>
     dplyr::select(date, bank = Fretag, interest) |>
